@@ -863,6 +863,8 @@ class Scheduler(
             pp_size=self.pp_size,
             chunked_prefill_size=effective_chunked_prefill_size,
             sliding_window_size=self.sliding_window_size,
+            enable_rollout_kv=server_args.enable_rollout_kv,
+            rollout_kv_pin_ttl_seconds=server_args.rollout_kv_pin_ttl_seconds,
         )
 
         if effective_chunked_prefill_size is not None and self.disable_radix_cache:
